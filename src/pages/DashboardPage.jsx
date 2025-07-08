@@ -91,9 +91,9 @@ const DashboardPage = ({ user, setUser }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('taskTracker_user');
-    setUser(null); // Clear React state
-    // Optionally redirect:
-    window.location.href = '/login'; // Adjust based on your routing
+    setUser(null); 
+    clearTimeout(logoutTimer);
+    clearTimeout(warningTimer);
   };
 
 
